@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./icons/to-do-list.png" />
     <title>Todo App</title>
 
     <link
@@ -34,11 +35,14 @@
         <span class="ui gray label">Not Complete</span>
         {% else %}
         <span class="ui green label">Completed</span>
-        {% endif %} 
-        {% if todo.complete != True %}
-            <a class="ui blue button" href="/update/{{ todo.id }}">Update</a>
+        {% endif %} {% if todo.complete != True %}
+        <a class="ui blue button" href="/update/{{ todo.id }}">Update</a>
         {% else %}
-            <a class="ui blue button" href="/update/{{ todo.id }}" style="pointer-events:none;opacity:0.5" disabled
+        <a
+          class="ui blue button"
+          href="/update/{{ todo.id }}"
+          style="pointer-events: none; opacity: 0.5"
+          disabled
           >Update</a
         >
         {% endif %}
